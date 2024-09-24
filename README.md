@@ -4,6 +4,24 @@
 
 This PowerShell script is designed to optimize Docker Desktop's performance on Windows by stopping the Docker service, exporting the Docker data, compacting the `ext4.vhdx` file, and re-importing the Docker data. The script aims to reduce the size of Docker's virtual disk, improving disk space usage and potentially enhancing performance.
 
+## How This Script Helps
+
+### Issues It Solves:
+1. **High Disk Usage**:
+   - Over time, Docker's virtual disk (`ext4.vhdx`) grows due to containers, images, and volumes that are created and removed. This can lead to high disk usage, even when unused data is not actively occupying space. By compacting the VHDX file, the script helps reclaim unused disk space.
+
+2. **Slow Docker Performance**:
+   - A bloated virtual disk may slow down Docker’s performance. Compacting the VHDX file can improve performance by reducing unnecessary file sizes, leading to quicker startup and execution times for Docker containers.
+
+3. **Docker Data Management**:
+   - If you frequently work with containers, images, and volumes, managing disk usage is important to ensure that Docker remains efficient and doesn't consume excessive resources. The export, compact, and import process optimizes the overall management of Docker data.
+
+4. **System Resource Optimization**:
+   - By freeing up disk space, the overall system may experience improved performance, especially if you're running multiple containers or resource-intensive applications.
+
+5. **Prevention of Docker Desktop Corruption**:
+   - In rare cases, a heavily used Docker installation might experience data corruption or other issues due to large or unmanaged data files. Regularly optimizing and managing the virtual disk can prevent such problems.
+
 ## Prerequisites
 
 Before running the script, make sure you meet the following requirements:
